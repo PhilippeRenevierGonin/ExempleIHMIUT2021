@@ -11,7 +11,9 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             let btn = document.querySelector("button");
-            let spanPourChrono = document.querySelector("span");
+            // let spanPourChrono = document.querySelector("span");
+            // une alternative : le span doit être après le bouton
+            spanPourChrono = btn.nextElementSibling;
             let chrono = new Chronometre(btn, spanPourChrono);
         });
 
