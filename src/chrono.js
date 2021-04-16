@@ -1,7 +1,17 @@
-let temps = 0;
+class Chronometre {
+    constructor(btn, span) {
+        this.temps = 0;
+        this.spanChrono = span;
+        btn.addEventListener("click", (e) => {
+            this.chrono(e);
+        });
 
-function chrono(e) {
-    temps += 1;
-    let spanChrono = document.querySelector("span");
-    spanChrono.innerHTML = temps;
+    }
+
+    chrono(e) {
+        this.temps += 1;
+        this.spanChrono.innerHTML = this.temps;
+    }
+
+
 }

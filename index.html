@@ -11,9 +11,8 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             let btn = document.querySelector("button");
-            btn.addEventListener("click", (e) => {
-                chrono(e);
-            });
+            let spanPourChrono = document.querySelector("span");
+            let chrono = new Chronometre(btn, spanPourChrono);
         });
 
     </script>
