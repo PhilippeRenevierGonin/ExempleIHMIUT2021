@@ -10,11 +10,8 @@
         
 
         document.addEventListener("DOMContentLoaded", () => {
-            let btn = document.querySelector("button");
-            // let spanPourChrono = document.querySelector("span");
-            // une alternative : le span doit être après le bouton
-            spanPourChrono = btn.nextElementSibling;
-            let chrono = new Chronometre(btn, spanPourChrono);
+            
+            let chrono = new Chronometre(1);
         });
 
     </script>
@@ -24,9 +21,18 @@
 <body>
 <h1>exemple live / chrono</h1>
 
+<!--
 <button>lancer le chrono</button>
 <span>00h00m00s0'</span>
+-->
 
+
+<p>La séance est en hybride.</p>
+
+<p>Le programme de cette séance :  les notions d'architecture, d'événement et introduction à javascript.
+</p>
+
+<p>Voici le lien zoom pour le mode hybride</p>
 
 
 </body>

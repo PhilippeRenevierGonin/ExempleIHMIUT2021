@@ -1,8 +1,33 @@
 class Chronometre {
-    constructor(btn, span) {
-        this.temps = 0;
-        this.spanChrono = span;
-        btn.addEventListener("click", (e) => {
+    constructor(position) {
+        this.temps = -1;
+
+        // structure html
+        this.spanChrono = document.createElement("span");
+        this.chrono();
+        this.btn = document.createElement("button");
+        this.btn.innerHTML="chronométrer";
+
+        let aside = document.createElement("aside");
+        aside.appendChild(this.btn);
+        aside.appendChild(this.spanChrono);
+
+        document.body.appendChild(aside);
+
+        // mise en forme en js
+        this.spanChrono.style.fontFamily = "Courier New, monospace";
+        // ou this.spanChrono = "font-familly : Courier New, monospace"; // écrase d'autre modification de .style. précédocument
+        // ou this.spanChrono.setAttribute("style", "font-family : Courier New, monospace");
+
+        let top = "0em";
+        console.log(position);
+        if (position) {
+            top = ""+1.2*position+"em";
+        }    
+        aside.setAttribute("style", "position : absolute; right: 0; top: "+top+"; background: rgba(232,232,232,0.75);padding-right: 0.5rem;");
+
+
+        this.btn.addEventListener("click", (e) => {
             this.chrono(e);
         });
 
