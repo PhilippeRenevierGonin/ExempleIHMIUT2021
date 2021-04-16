@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>exemple live / chrono</title>
 
+    <script type="text/javascript" src="src/chrono.js"></script>
 
     <script type="text/javascript">
         
@@ -11,9 +12,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             let btn = document.querySelector("button");
             btn.addEventListener("click", (e) => {
-                console.log("click 3");
-                console.log(e);
-                console.dir(e);
+                chrono(e);
             });
         });
 
