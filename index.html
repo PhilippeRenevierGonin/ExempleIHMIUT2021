@@ -5,6 +5,20 @@
     <title>exemple live / chrono</title>
 
 
+    <script type="text/javascript">
+        
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let btn = document.querySelector("button");
+            btn.addEventListener("click", (e) => {
+                console.log("click 3");
+                console.log(e);
+                console.dir(e);
+            });
+        });
+
+    </script>
+
 </head>
 
 <body>
@@ -13,11 +27,7 @@
 <button>lancer le chrono</button>
 <span>00h00m00s0'</span>
 
-<script type="text/javascript">
-    // côté obscur : c'est à la fin
-    let btn = document.querySelector("button");
-    btn.addEventListener("click", (e) => {console.log("click 3");console.log(e);console.dir(e);});
-</script>
+
 
 </body>
 </html>
