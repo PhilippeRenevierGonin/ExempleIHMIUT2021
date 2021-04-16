@@ -2,11 +2,17 @@ class Chronometre {
     constructor(position) {
         this.temps = -1;
 
+        if (localStorage.getItem("temps")) {
+            this.temps = parseInt(localStorage.getItem("temps"));
+        }
+
+        this.interval = 0;
+
         // structure html
         this.spanChrono = document.createElement("span");
         this.chrono();
         this.btn = document.createElement("button");
-        this.btn.innerHTML="chronométrer";
+        this.btn.innerHTML="stop";
 
         let aside = document.createElement("aside");
         aside.appendChild(this.btn);
@@ -28,13 +34,14 @@ class Chronometre {
 
 
         this.btn.addEventListener("click", (e) => {
-            this.chrono(e);
+            this.stopperOuRelancer(e);
         });
 
     }
 
     chrono(e) {
         this.temps += 1;
+        localStorage.setItem("temps", this.temps);
         this.spanChrono.innerHTML = this.format(this.getHeures(), "h")+this.format(this.getMinutes(), "m")+this.format(this.getSecondes(), "s")+this.getDixiemes()+ "'";
     }
 
@@ -73,6 +80,21 @@ class Chronometre {
 
     démarrer() {
         this.interval = setInterval(() => this.chrono(), 100);
+    }
+
+    stopperOuRelancer(e) {
+        console.log(e);
+        if (this.interval === 0) {
+            this.démarrer();
+            // this.btn ou e.target
+            this.btn.innerHTML = "stop";
+        }
+        else {
+            clearInterval(this.interval);
+            this.interval = 0;
+            this.btn.innerHTML = "play";
+
+        }
     }
 
 
