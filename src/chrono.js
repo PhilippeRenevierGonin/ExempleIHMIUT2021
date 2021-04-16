@@ -71,4 +71,9 @@ class Chronometre {
     }
 
 
+    démarrer() {
+        this.interval = setInterval(() => this.chrono(), 100);
+    }
+
+
 }
