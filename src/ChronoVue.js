@@ -54,7 +54,7 @@ class ChronoVue  {
 
     // on passe un objet en paramètre
     écouterPanneauDeContrôle(ctrl) {
-        this.btn.addEventListener("click", () => ctrt.stopperOuRelancer());
+        this.btn.addEventListener("click", () => ctrl.stopperOuRelancer());
     }
 
     // changement de mode

@@ -24,7 +24,7 @@ class ChronoControleur {
             clearInterval(this.interval);
             this.interval = 0;
             // @todo commebt accéder au bouton ? 
-            this.btn.modifierPanneauDeContrôle("play");
+            this.vue.modifierPanneauDeContrôle("play");
 
         }
     }
